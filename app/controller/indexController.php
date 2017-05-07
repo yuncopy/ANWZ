@@ -22,7 +22,10 @@ class indexController extends baseController
 
     public function indexAction()
     {
-       echo '<center>欢迎来到 ANWZ 轻量级框架</center>';
+       
+        $this->display('index/index.html');
+        
+        
     }
     
      public function userAction()

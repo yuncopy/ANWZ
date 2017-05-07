@@ -100,6 +100,11 @@ class awz
                 'cache' => $view_cache_dir,
                 'debug'=> true
             ));
+            $twig->addExtension(new \Twig_Extensions_Extension_Text());  // 第三方扩展 http://twig-extensions.readthedocs.io/en/latest/text.html
+            $twig->addExtension(new \Twig_Extensions_Extension_Array());// 第三方扩展 http://twig-extensions.readthedocs.io/en/latest/text.html
+            $twig->addExtension(new \Twig_Extensions_Extension_Getfash());  // 自定义扩展
+            $twig->addExtension(new \Twig_Extension_Debug()); //添加  https://twig.sensiolabs.org/doc/2.x/functions/dump.html
+            
             $template = $twig->loadTemplate($file);
             $template->display($this->assign? $this->assign : array());
             

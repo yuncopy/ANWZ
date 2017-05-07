@@ -1,7 +1,7 @@
 <?php
 
-/* user/login.html */
-class __TwigTemplate_92069b76bac33b0fe74f2009d16043ef303f29dc001813ca4bbe0b8ed0140571 extends Twig_Template
+/* user/login.php */
+class __TwigTemplate_6b8bfc8df556b96cded5406662fa6229f4958e4314e4de02eee6f6907a38414e extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -52,10 +52,7 @@ class __TwigTemplate_92069b76bac33b0fe74f2009d16043ef303f29dc001813ca4bbe0b8ed01
         <form class=\"form-signin\" action=\"/user/login\" method=\"post\">
         <h2 class=\"form-signin-heading\">Please sign in</h2>
 
-         <div class=\"alert alert-danger\" role=\"alert\">";
-        // line 37
-        flush();
-        echo "</div>
+         <div class=\"alert alert-danger\" role=\"alert\"><?php echo 11111;?></div>
          
 
         <label for=\"inputEmail\" class=\"sr-only\">Email address</label>
@@ -86,12 +83,12 @@ class __TwigTemplate_92069b76bac33b0fe74f2009d16043ef303f29dc001813ca4bbe0b8ed01
 
     public function getTemplateName()
     {
-        return "user/login.html";
+        return "user/login.php";
     }
 
     public function getDebugInfo()
     {
-        return array (  57 => 37,  19 => 1,);
+        return array (  19 => 1,);
     }
 
     public function getSourceContext()
@@ -132,7 +129,7 @@ class __TwigTemplate_92069b76bac33b0fe74f2009d16043ef303f29dc001813ca4bbe0b8ed01
         <form class=\"form-signin\" action=\"/user/login\" method=\"post\">
         <h2 class=\"form-signin-heading\">Please sign in</h2>
 
-         <div class=\"alert alert-danger\" role=\"alert\">{% flush %}</div>
+         <div class=\"alert alert-danger\" role=\"alert\"><?php echo 11111;?></div>
          
 
         <label for=\"inputEmail\" class=\"sr-only\">Email address</label>
@@ -158,6 +155,6 @@ class __TwigTemplate_92069b76bac33b0fe74f2009d16043ef303f29dc001813ca4bbe0b8ed01
 
 
 
-", "user/login.html", "F:\\Projects\\ANWZ\\app\\view\\user\\login.html");
+", "user/login.php", "F:\\Projects\\ANWZ\\app\\view\\user\\login.php");
     }
 }

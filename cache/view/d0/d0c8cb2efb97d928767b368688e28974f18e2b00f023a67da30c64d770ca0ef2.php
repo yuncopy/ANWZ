@@ -1,7 +1,7 @@
 <?php
 
 /* user/login.html */
-class __TwigTemplate_92069b76bac33b0fe74f2009d16043ef303f29dc001813ca4bbe0b8ed0140571 extends Twig_Template
+class __TwigTemplate_1731b03ce39f2b58245cce4f8f730a2ba2e394dccaa8b7d27b93dbb6947923cc extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -54,9 +54,9 @@ class __TwigTemplate_92069b76bac33b0fe74f2009d16043ef303f29dc001813ca4bbe0b8ed01
 
          <div class=\"alert alert-danger\" role=\"alert\">";
         // line 37
-        flush();
-        echo "</div>
-         
+        echo twig_escape_filter($this->env, twig_shuffle_filter("1111"), "html", null, true);
+        echo "  </div>
+        
 
         <label for=\"inputEmail\" class=\"sr-only\">Email address</label>
         <input type=\"email\"  name=\"email\" id=\"inputEmail\" class=\"form-control\" placeholder=\"Email address\" required autofocus>
@@ -87,6 +87,11 @@ class __TwigTemplate_92069b76bac33b0fe74f2009d16043ef303f29dc001813ca4bbe0b8ed01
     public function getTemplateName()
     {
         return "user/login.html";
+    }
+
+    public function isTraitable()
+    {
+        return false;
     }
 
     public function getDebugInfo()
@@ -132,8 +137,8 @@ class __TwigTemplate_92069b76bac33b0fe74f2009d16043ef303f29dc001813ca4bbe0b8ed01
         <form class=\"form-signin\" action=\"/user/login\" method=\"post\">
         <h2 class=\"form-signin-heading\">Please sign in</h2>
 
-         <div class=\"alert alert-danger\" role=\"alert\">{% flush %}</div>
-         
+         <div class=\"alert alert-danger\" role=\"alert\">{{ '1111'|shuffle }}  </div>
+        
 
         <label for=\"inputEmail\" class=\"sr-only\">Email address</label>
         <input type=\"email\"  name=\"email\" id=\"inputEmail\" class=\"form-control\" placeholder=\"Email address\" required autofocus>

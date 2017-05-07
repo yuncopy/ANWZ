@@ -1,7 +1,7 @@
 <?php
 
 /* user/login.html */
-class __TwigTemplate_92069b76bac33b0fe74f2009d16043ef303f29dc001813ca4bbe0b8ed0140571 extends Twig_Template
+class __TwigTemplate_c13d7e2cb54cb378b52c829c01bf5706d4f793c12cce172d173b6cd45bc9b6f2 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -51,13 +51,10 @@ class __TwigTemplate_92069b76bac33b0fe74f2009d16043ef303f29dc001813ca4bbe0b8ed01
     <div class=\"container\">
         <form class=\"form-signin\" action=\"/user/login\" method=\"post\">
         <h2 class=\"form-signin-heading\">Please sign in</h2>
-
-         <div class=\"alert alert-danger\" role=\"alert\">";
-        // line 37
-        flush();
-        echo "</div>
-         
-
+        <div class=\"alert alert-danger closes\" role=\"alert\" data-dismiss=\"modal\" aria-label=\"Close\" >";
+        // line 36
+        echo twig_escape_filter($this->env, twig_getfash($this->env, $context, "message"), "html", null, true);
+        echo " </div>
         <label for=\"inputEmail\" class=\"sr-only\">Email address</label>
         <input type=\"email\"  name=\"email\" id=\"inputEmail\" class=\"form-control\" placeholder=\"Email address\" required autofocus>
          <label for=\"inputPassword\" class=\"sr-only\">Password</label>
@@ -73,6 +70,24 @@ class __TwigTemplate_92069b76bac33b0fe74f2009d16043ef303f29dc001813ca4bbe0b8ed01
     </div> <!-- /container -->
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
      <script src=\"https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js\"></script>
+     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script>
+        \$(function(\$) {
+            var _closes = \$(\".closes\");
+            var html = \$.trim(_closes.html());
+            if(html.length >0){
+                _closes.show();
+            }else{
+                _closes.hide();
+            }
+            _closes.click( function () { 
+                 \$(this).fadeOut(\"slow\");
+             });
+          });
+       
+    </script>  
+         
+     
   </body>
 
 </html>
@@ -89,9 +104,14 @@ class __TwigTemplate_92069b76bac33b0fe74f2009d16043ef303f29dc001813ca4bbe0b8ed01
         return "user/login.html";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  57 => 37,  19 => 1,);
+        return array (  56 => 36,  19 => 1,);
     }
 
     public function getSourceContext()
@@ -131,10 +151,7 @@ class __TwigTemplate_92069b76bac33b0fe74f2009d16043ef303f29dc001813ca4bbe0b8ed01
     <div class=\"container\">
         <form class=\"form-signin\" action=\"/user/login\" method=\"post\">
         <h2 class=\"form-signin-heading\">Please sign in</h2>
-
-         <div class=\"alert alert-danger\" role=\"alert\">{% flush %}</div>
-         
-
+        <div class=\"alert alert-danger closes\" role=\"alert\" data-dismiss=\"modal\" aria-label=\"Close\" >{{ getfash('message') }} </div>
         <label for=\"inputEmail\" class=\"sr-only\">Email address</label>
         <input type=\"email\"  name=\"email\" id=\"inputEmail\" class=\"form-control\" placeholder=\"Email address\" required autofocus>
          <label for=\"inputPassword\" class=\"sr-only\">Password</label>
@@ -150,6 +167,24 @@ class __TwigTemplate_92069b76bac33b0fe74f2009d16043ef303f29dc001813ca4bbe0b8ed01
     </div> <!-- /container -->
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
      <script src=\"https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js\"></script>
+     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script>
+        \$(function(\$) {
+            var _closes = \$(\".closes\");
+            var html = \$.trim(_closes.html());
+            if(html.length >0){
+                _closes.show();
+            }else{
+                _closes.hide();
+            }
+            _closes.click( function () { 
+                 \$(this).fadeOut(\"slow\");
+             });
+          });
+       
+    </script>  
+         
+     
   </body>
 
 </html>

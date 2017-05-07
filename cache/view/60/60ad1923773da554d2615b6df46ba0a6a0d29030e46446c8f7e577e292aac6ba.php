@@ -1,7 +1,7 @@
 <?php
 
 /* user/login.html */
-class __TwigTemplate_92069b76bac33b0fe74f2009d16043ef303f29dc001813ca4bbe0b8ed0140571 extends Twig_Template
+class __TwigTemplate_3e7cbc456235d528d22ce9591ecb4da8752bf8ec539a57aa4dce101c2f2ee154 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -54,9 +54,10 @@ class __TwigTemplate_92069b76bac33b0fe74f2009d16043ef303f29dc001813ca4bbe0b8ed01
 
          <div class=\"alert alert-danger\" role=\"alert\">";
         // line 37
-        flush();
-        echo "</div>
-         
+        echo twig_escape_filter($this->env, twig_wordwrap_filter($this->env, "Lorem ipsum dolor sit amet, consectetur adipiscing", 10, "zz
+"), "html", null, true);
+        echo "  </div>
+        
 
         <label for=\"inputEmail\" class=\"sr-only\">Email address</label>
         <input type=\"email\"  name=\"email\" id=\"inputEmail\" class=\"form-control\" placeholder=\"Email address\" required autofocus>
@@ -87,6 +88,11 @@ class __TwigTemplate_92069b76bac33b0fe74f2009d16043ef303f29dc001813ca4bbe0b8ed01
     public function getTemplateName()
     {
         return "user/login.html";
+    }
+
+    public function isTraitable()
+    {
+        return false;
     }
 
     public function getDebugInfo()
@@ -132,8 +138,8 @@ class __TwigTemplate_92069b76bac33b0fe74f2009d16043ef303f29dc001813ca4bbe0b8ed01
         <form class=\"form-signin\" action=\"/user/login\" method=\"post\">
         <h2 class=\"form-signin-heading\">Please sign in</h2>
 
-         <div class=\"alert alert-danger\" role=\"alert\">{% flush %}</div>
-         
+         <div class=\"alert alert-danger\" role=\"alert\">{{ \"Lorem ipsum dolor sit amet, consectetur adipiscing\"|wordwrap(10, \"zz\\n\") }}  </div>
+        
 
         <label for=\"inputEmail\" class=\"sr-only\">Email address</label>
         <input type=\"email\"  name=\"email\" id=\"inputEmail\" class=\"form-control\" placeholder=\"Email address\" required autofocus>

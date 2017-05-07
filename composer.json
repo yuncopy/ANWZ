@@ -11,7 +11,9 @@
         "symfony/var-dumper": "^3.2",
         "catfan/Medoo": "^1.2",
         "twig/twig": "^2.3",
-        "joomla/input":"*"
+        "joomla/input":"*",
+        "duncan3dc/sessions":"*",
+        "twig/extensions": "^1.4"
     },
     "repositories": {
         "packagist": {

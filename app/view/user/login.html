@@ -31,12 +31,13 @@
   <body>
       
     <div class="container">
-        <form class="form-signin" action="send.php" method="post">
+        <form class="form-signin" action="/user/login" method="post">
         <h2 class="form-signin-heading">Please sign in</h2>
+        <div class="alert alert-danger closes" role="alert" data-dismiss="modal" aria-label="Close" >{{ getfash('message') }} </div>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email"  name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
          <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> Remember me
@@ -48,6 +49,24 @@
     </div> <!-- /container -->
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
      <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script>
+        $(function($) {
+            var _closes = $(".closes");
+            var html = $.trim(_closes.html());
+            if(html.length >0){
+                _closes.show();
+            }else{
+                _closes.hide();
+            }
+            _closes.click( function () { 
+                 $(this).fadeOut("slow");
+             });
+          });
+       
+    </script>  
+         
+     
   </body>
 
 </html>

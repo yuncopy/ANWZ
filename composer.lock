@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "cdb6c9257ad25be738549a5df9ad2d5c",
+    "content-hash": "eabef5a0401af81ddf22ec36f3999234",
     "packages": [
         {
             "name": "catfan/medoo",
@@ -60,6 +60,57 @@
                 "sqlite"
             ],
             "time": "2017-02-17T16:05:35+00:00"
+        },
+        {
+            "name": "duncan3dc/sessions",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/duncan3dc/sessions.git",
+                "reference": "a5278afda4a8f08ec3fe427c07f1f8d925f4c578"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/duncan3dc/sessions/a5278afda4a8f08ec3fe427c07f1f8d925f4c578.zip",
+                "reference": "a5278afda4a8f08ec3fe427c07f1f8d925f4c578",
+                "shasum": ""
+            },
+            "require": {
+                "ext-session": "*",
+                "php": "^5.6|^7.0"
+            },
+            "require-dev": {
+                "duncan3dc/object-intruder": "^0.1.0",
+                "guzzlehttp/guzzle": "^6.2",
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "duncan3dc\\Sessions\\": "src/",
+                    "duncan3dc\\SessionsTest\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Craig Duncan",
+                    "email": "git@duncanc.co.uk",
+                    "homepage": "https://github.com/duncan3dc",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A non-blocking session manager",
+            "homepage": "https://github.com/duncan3dc/sessions",
+            "keywords": [
+                "non-blocking",
+                "session"
+            ],
+            "time": "2017-01-31T22:46:14+00:00"
         },
         {
             "name": "filp/whoops",
@@ -459,6 +510,58 @@
                 "dump"
             ],
             "time": "2017-05-01T14:55:58+00:00"
+        },
+        {
+            "name": "twig/extensions",
+            "version": "v1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig-extensions.git",
+                "reference": "f0bb8431c8691f5a39f1017d9a5967a082bf01ff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/twigphp/Twig-extensions/f0bb8431c8691f5a39f1017d9a5967a082bf01ff.zip",
+                "reference": "f0bb8431c8691f5a39f1017d9a5967a082bf01ff",
+                "shasum": ""
+            },
+            "require": {
+                "twig/twig": "~1.20|~2.0"
+            },
+            "require-dev": {
+                "symfony/translation": "~2.3"
+            },
+            "suggest": {
+                "symfony/translation": "Allow the time_diff output to be translated"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Twig_Extensions_": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Common additional features for Twig that do not directly belong in core",
+            "homepage": "http://twig.sensiolabs.org/doc/extensions/index.html",
+            "keywords": [
+                "i18n",
+                "text"
+            ],
+            "time": "2016-10-25T17:34:14+00:00"
         },
         {
             "name": "twig/twig",
