@@ -3,7 +3,7 @@ ANWZ  is a simple PHP framework
 
 
 Nginx配置
-
+```
 server {
     charset utf-8;
     client_max_body_size 128M;
@@ -30,6 +30,6 @@ server {
     }
 
 }
-
+``
 
 
