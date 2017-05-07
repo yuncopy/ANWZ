@@ -6,10 +6,10 @@
  * and open the template in the editor.
  */
 namespace app\controller;
-use core\awz as awz; //导入基类
 use core\lib\model as model;//导入数据类
+use app\model\userModel as userModel;
 
-class indexController extends awz
+class indexController extends baseController
 {
     
     public static $usermodel = null;
@@ -21,6 +21,11 @@ class indexController extends awz
     }
 
     public function indexAction()
+    {
+       echo '<center>欢迎来到 ANWZ 轻量级框架</center>';
+    }
+    
+     public function userAction()
     {
        // 原始使用PDO
         $model = new \core\lib\model();
@@ -43,9 +48,10 @@ class indexController extends awz
     
      
     public function  selectAction(){
-       $database = new model();
+       $database = new userModel();
        // 一般项目中使用不建议在控制器中使用SQL语句
        $datas = $database->select("users", ["id","name"],["id[>]" => 1]);
+       echo $database->last();
        dump($datas); 
     }
     

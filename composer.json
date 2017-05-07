@@ -10,7 +10,8 @@
         "filp/whoops":"*",
         "symfony/var-dumper": "^3.2",
         "catfan/Medoo": "^1.2",
-        "twig/twig": "^2.3"
+        "twig/twig": "^2.3",
+        "joomla/input":"*"
     },
     "repositories": {
         "packagist": {

@@ -13,8 +13,8 @@ class usersModel extends model
     private  $table = 'users';
     public function  getUser(){
        //http://medoo.in/api/select
-        $datas = $this->select($this->table, ["id","name"],["id[>]" => 1]);
-        
+        $datas = $this->select($this->table, ["user_email"],["id[>]" => 1]);
+       
         return $datas;
         
     }

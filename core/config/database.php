@@ -7,7 +7,7 @@
  */
 
 return array(
-     'database_type' => 'mysql',
+    'database_type' => 'mysql',
     'database_name' => 'awzphp',
     'server' => 'localhost',
     'username' => 'root',
