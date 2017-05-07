@@ -39,8 +39,8 @@ class awz
             throw new \Exception('Not Find Controller : '.$controller_file);
         }
         //启动日志类
-        \core\lib\log::init();
-        \core\lib\log::log('111');
+       // \core\lib\log::init();
+        //\core\lib\log::log('111');
         
     }
     

@@ -28,7 +28,7 @@ class file
         }
         
         //写入日志
-        return file_put_contents($pathname.$file.'.php', '['.date('Y-m-d H:i:s') .'] '.json_encode($message).PHP_EOL , FILE_APPEND);
+        return file_put_contents($pathname.$file.'_'.date('Y_m_d_H').'.php', '['.date('Y-m-d H:i:s') .'] '.json_encode($message).PHP_EOL , FILE_APPEND);
         
     }
 }

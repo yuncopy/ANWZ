@@ -6,3 +6,28 @@
  * and open the template in the editor.
  */
 
+namespace app\controller;
+use app\model\roleModel;
+class roleController extends baseController
+{
+    
+    public static  $roleModel;
+
+
+    public function __construct() {
+        if(!self::$roleModel){ 
+            self::$$roleModel = new roleModel ();
+        }
+        parent::__construct();
+    }
+
+
+    
+    
+ 
+    
+        
+        
+    
+}
+
