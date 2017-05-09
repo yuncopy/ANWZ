@@ -16,13 +16,16 @@ class roleController extends baseController
 
     public function __construct() {
         if(!self::$roleModel){ 
-            self::$$roleModel = new roleModel ();
+            self::$roleModel = new roleModel ();
         }
         parent::__construct();
     }
 
 
-    
+    public function listAction(){
+        
+        $this->display('role/list.html');
+    }
     
  
     

@@ -26,7 +26,7 @@ class __TwigTemplate_c13d7e2cb54cb378b52c829c01bf5706d4f793c12cce172d173b6cd45bc
     <meta name=\"description\" content=\"\">
     <meta name=\"author\" content=\"\">
 
-    <title>Signin Template for Bootstrap</title>
+    <title>ANWZ | Signin </title>
 
     <!-- Bootstrap core CSS -->
     <link href=\"https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css\" rel=\"stylesheet\">
@@ -126,7 +126,7 @@ class __TwigTemplate_c13d7e2cb54cb378b52c829c01bf5706d4f793c12cce172d173b6cd45bc
     <meta name=\"description\" content=\"\">
     <meta name=\"author\" content=\"\">
 
-    <title>Signin Template for Bootstrap</title>
+    <title>ANWZ | Signin </title>
 
     <!-- Bootstrap core CSS -->
     <link href=\"https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css\" rel=\"stylesheet\">

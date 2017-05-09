@@ -1,7 +1,7 @@
 <?php
 
-/* index/index.html */
-class __TwigTemplate_8915743d54ffedf4a02b0df627a89dcb561335f0b96c1c869e030009244f6a44 extends Twig_Template
+/* role/list.html */
+class __TwigTemplate_0da9bae2c05d044c25dd59563996dc2507ef7f2f5a1e66aed6f27a73a604d5b6 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -95,7 +95,7 @@ class __TwigTemplate_8915743d54ffedf4a02b0df627a89dcb561335f0b96c1c869e030009244
         </div>
         <div class=\"col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main\">
 
-          <h2 class=\"sub-header\">Section title</h2>
+          <h2 class=\"sub-header\">角色列表</h2>
           <div class=\"table-responsive\">
             <table class=\"table table-striped\">
               <thead>
@@ -244,7 +244,7 @@ class __TwigTemplate_8915743d54ffedf4a02b0df627a89dcb561335f0b96c1c869e030009244
 
     public function getTemplateName()
     {
-        return "index/index.html";
+        return "role/list.html";
     }
 
     public function isTraitable()
@@ -335,7 +335,7 @@ class __TwigTemplate_8915743d54ffedf4a02b0df627a89dcb561335f0b96c1c869e030009244
         </div>
         <div class=\"col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main\">
 
-          <h2 class=\"sub-header\">Section title</h2>
+          <h2 class=\"sub-header\">角色列表</h2>
           <div class=\"table-responsive\">
             <table class=\"table table-striped\">
               <thead>
@@ -479,6 +479,6 @@ class __TwigTemplate_8915743d54ffedf4a02b0df627a89dcb561335f0b96c1c869e030009244
     <script src=\"/public/js/ie10-viewport-bug-workaround.js\"></script>
   </body>
 </html>
-", "index/index.html", "F:\\Projects\\ANWZ\\app\\view\\index\\index.html");
+", "role/list.html", "F:\\Projects\\ANWZ\\app\\view\\role\\list.html");
     }
 }

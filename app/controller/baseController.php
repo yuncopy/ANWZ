@@ -7,30 +7,23 @@
  */
 namespace app\controller;
 use core\awz as awz; //导入基类
-use Joomla\Input;
-use duncan3dc\Sessions\Cookie;
-use duncan3dc\Sessions\SessionInstance;
+
 
 class  baseController  extends awz
 {
     
-    public static $_input;
-    public static $_session;
+    
+ 
     public function __construct() {
-        if(!self::$_input){
-            self::$_input = new Input\Input;
-        }
-        if(!self::$_session){
-            self::$_session = new SessionInstance("anwz");
-        }
-        $this->isLogin();
+       
+        $this->isLogin();  // 检查是否登录
         parent::__construct();
     }
     
     //用户是否登录
-    protected function  isLogin(){
-        $user_id = self::$_session->get('user_id');
-        if(empty($user_id)){
+    public function  isLogin(){
+        $user_id = awz::session()->get('user_id');
+        if(!$user_id){
            redirect('/user/login');
         }
     }

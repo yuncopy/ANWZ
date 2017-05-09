@@ -7,14 +7,36 @@
  */
 
 namespace core;
+use duncan3dc\Sessions\Cookie;
+use duncan3dc\Sessions\SessionInstance;
+use Joomla\Input;
+
 class awz
 {
-    public static  $classMap =array();
+    public static  $classMap = array();
+    public static  $_session = null;
+    public static  $_input = null;
     public $assign;
     
     public function __construct() {
         
     }
+    
+    // session
+    public static function session(){
+        if(!self::$_session){
+            self::$_session = new SessionInstance("anwz");
+        }
+        return self::$_session;
+    }
+     public static function input(){
+        if(!self::$_input){
+            self::$_input = new Input\Input;
+        }
+        return self::$_input;
+    }
+    
+   
 
     //启动框架的方法
     public static function run()
