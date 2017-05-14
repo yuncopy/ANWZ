@@ -1,14 +1,14 @@
 <?php
 
-/* role/list.html */
-class __TwigTemplate_0da9bae2c05d044c25dd59563996dc2507ef7f2f5a1e66aed6f27a73a604d5b6 extends Twig_Template
+/* user/list.html */
+class __TwigTemplate_15bb4fa186a7ec91d59fd4f16a27f1436be320289d3d3b7aec880ceb69246bd4 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
         parent::__construct($env);
 
         // line 2
-        $this->parent = $this->loadTemplate("layout.html", "role/list.html", 2);
+        $this->parent = $this->loadTemplate("layout.html", "user/list.html", 2);
         $this->blocks = array(
             'content' => array($this, 'block_content'),
         );
@@ -107,7 +107,7 @@ class __TwigTemplate_0da9bae2c05d044c25dd59563996dc2507ef7f2f5a1e66aed6f27a73a60
 
     public function getTemplateName()
     {
-        return "role/list.html";
+        return "user/list.html";
     }
 
     public function isTraitable()
@@ -169,6 +169,6 @@ class __TwigTemplate_0da9bae2c05d044c25dd59563996dc2507ef7f2f5a1e66aed6f27a73a60
         </table>
     </div>
 </div>
-{% endblock %}", "role/list.html", "F:\\Projects\\ANWZ\\app\\view\\role\\list.html");
+{% endblock %}", "user/list.html", "F:\\Projects\\ANWZ\\app\\view\\user\\list.html");
     }
 }

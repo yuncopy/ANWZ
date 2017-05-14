@@ -15,12 +15,20 @@ class usersModel extends model
     public function  getUser(){
        //http://medoo.in/api/select
         $datas = $this->select($this->table, ["user_email"],["id[>]" => 1]);
-       
         return $datas;
-        
     }
     
+    public function  listUser(){
+
+         $datas = $this->select($this->table, [
+            "name",
+            "email",
+            "id"
+        ]);
+        return !empty($datas)? $datas : false; 
+    }
     
+    //检查用户是否存在
     public function  userExist($user_email = null){
         if(is_string($user_email) && $user_email){
             $datas = $this->select($this->table, [

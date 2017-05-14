@@ -13,35 +13,63 @@ class roleModel extends model
     private  $table = 'role';
  
     
-    public function  userExist($user_email = null){
-        if(is_string($user_email) && $user_email){
-            $datas = $this->select($this->table, [
-                "email",
-                "password",
-                "id",
-                "name"
-            ], [
-                "email[=]" => $user_email
-            ]);
-            return !empty($datas)? $datas[0] : false;
-        }
+    public function  listRole(){
+        
+        $datas = $this->select($this->table, [
+            "name",
+            "descs",
+            "id"
+        ]);
+        return !empty($datas)? $datas : false; 
         
     }
-     
-    //注册用户  //http://medoo.in/doc
-    public function registerUser($userinfo = array()){
+    
+    //编辑角色
+    public function  updateRole($id ,$updata=null){
+        if($updata && $id){
+            //执行编辑操作
+            $data = $this->update($this->table, [
+                "name" => $updata['name'],
+                "descs" =>$updata['descs'],
+                "status" =>$updata['status'],
+                "updated_time"=>date('Y-m-d H:i:s')
+            ], [
+                "id[=]" => $id
+            ]);
+            return !empty($data) ? $data : false;
+            
+        }else if($id && !$updata){
+            //查询单条记录
+            $roleOne = $this->get($this->table, [
+                "name",
+                "descs",
+                "status",
+                "id"
+            ], [
+                "id" => $id
+            ]);
+            return !empty($roleOne) ? $roleOne : null;
+        }else{
+            return null;
+        }
+    }
+    
+    
+
+        //注册用户  //http://medoo.in/doc
+    public function addRole($roleinfo = array()){
         
-        if(is_array($userinfo) && $userinfo){
+        if(is_array($roleinfo) && $roleinfo){
             $date_time = date('Y-m-d H:i:s');
             $this->insert($this->table, [
-                    "name" => !empty($userinfo['name']) ? $userinfo['name'] : 'anwz'. rand(10000, 99999),
-                    "password" => sha1($this->str.$userinfo['password']),
-                    "email" => $userinfo['email'],
+                    "name" => $roleinfo['name'],
+                    "descs" => $roleinfo['descs'],
                     "updated_time" => $date_time,
                     "created_time" => $date_time
                 
             ]);
             $user_id = $this->id();
+            return !empty($user_id) ? $user_id : false;
         }
         
         

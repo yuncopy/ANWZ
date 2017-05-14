@@ -60,8 +60,15 @@ if(!function_exists('getFlash')){
         return empty($message) ? $message : '';
         
     }
-    
-    
+}
+
+if(!function_exists('check_input')){
+    function check_input($data){
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
 }
 
 

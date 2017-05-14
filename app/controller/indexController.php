@@ -23,8 +23,7 @@ class indexController extends baseController
     public function indexAction()
     {
        
-        $user_email = self::$_session->get("user_email");
-        $this->assign('user_email',$user_email);
+      
         $this->display('index/index.html');
         
         

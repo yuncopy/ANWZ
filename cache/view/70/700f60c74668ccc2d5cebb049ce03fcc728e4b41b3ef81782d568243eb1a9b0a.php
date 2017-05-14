@@ -49,7 +49,7 @@ class __TwigTemplate_c13d7e2cb54cb378b52c829c01bf5706d4f793c12cce172d173b6cd45bc
   <body>
       
     <div class=\"container\">
-        <form class=\"form-signin\" action=\"/user/login\" method=\"post\">
+        <form class=\"form-signin\" action=\"/login/login\" method=\"post\">
         <h2 class=\"form-signin-heading\">Please sign in</h2>
         <div class=\"alert alert-danger closes\" role=\"alert\" data-dismiss=\"modal\" aria-label=\"Close\" >";
         // line 36
@@ -149,7 +149,7 @@ class __TwigTemplate_c13d7e2cb54cb378b52c829c01bf5706d4f793c12cce172d173b6cd45bc
   <body>
       
     <div class=\"container\">
-        <form class=\"form-signin\" action=\"/user/login\" method=\"post\">
+        <form class=\"form-signin\" action=\"/login/login\" method=\"post\">
         <h2 class=\"form-signin-heading\">Please sign in</h2>
         <div class=\"alert alert-danger closes\" role=\"alert\" data-dismiss=\"modal\" aria-label=\"Close\" >{{ getfash('message') }} </div>
         <label for=\"inputEmail\" class=\"sr-only\">Email address</label>

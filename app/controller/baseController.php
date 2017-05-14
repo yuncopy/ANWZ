@@ -17,6 +17,7 @@ class  baseController  extends awz
     public function __construct() {
        
         $this->isLogin();  // 检查是否登录
+        $this->getUser();  //分配用户名
         parent::__construct();
     }
     
@@ -26,6 +27,12 @@ class  baseController  extends awz
         if(!$user_id){
            redirect('/user/login');
         }
+    }
+    
+    //获取用户名
+    public function getUser(){
+        $user_email = self::$_session->get("user_email");
+        $this->assign('user_email',$user_email);
     }
 
 
