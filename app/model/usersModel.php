@@ -58,6 +58,55 @@ class usersModel extends model
                 
             ]);
             $user_id = $this->id();
+        } 
+    }
+    
+     //编辑角色
+    public function  updateUser($id ,$updata=null){
+        if($updata && $id){
+            //执行编辑操作
+            $data = $this->update($this->table, [
+                "name" => $updata['name'],
+                "status" =>$updata['status'],
+                "updated_time"=>date('Y-m-d H:i:s')
+            ], [
+                "id[=]" => $id
+            ]);
+            return !empty($data) ? $data : false;
+            
+        }else if($id && !$updata){
+            //查询单条记录
+            $roleOne = $this->get($this->table, [
+                "name",
+                "email",
+                "status",
+                "id"
+            ], [
+                "id" => $id
+            ]);
+            return !empty($roleOne) ? $roleOne : null;
+        }else{
+            return null;
+        }
+    }
+    
+    
+
+    //添加用户  //http://medoo.in/doc
+    public function addUser($userinfo = array()){
+        
+        if(is_array($userinfo) && $userinfo){
+            $date_time = date('Y-m-d H:i:s');
+            $this->insert($this->table, [
+               "name"       => !empty($userinfo['name']) ? $userinfo['name'] : 'anwz'. rand(10000, 99999),
+                "password"  => sha1($this->str.$userinfo['password']),
+                "email"     => $userinfo['email'],
+                "updated_time" => $date_time,
+                "created_time" => $date_time
+                
+            ]);
+            $user_id = $this->id();
+            return !empty($user_id) ? $user_id : false;
         }
         
         

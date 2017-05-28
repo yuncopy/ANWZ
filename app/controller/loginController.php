@@ -35,6 +35,7 @@ class loginController extends awz
                 $list = self::$userModel->userExist($email);
                 if($list){
                     $dbpass = sha1((self::$userModel->str).$password);
+                   // dump($dbpass);exit;
                     if($dbpass == $list['password']){
                         //保存用户信息               
                         awz::session()->set("user_email", $list['email']);
@@ -43,15 +44,15 @@ class loginController extends awz
                         
                     }else{
                         awz::session()->setFlash('message', 'Password error');
-                        redirect('/user/login');
+                        redirect('/login/login');
                     }
                 }else{
                     awz::session()->setFlash('message', 'The user does not exist');
-                    redirect('/user/login');
+                    redirect('/login/login');
                 }
              }else{
                   awz::session()->setFlash("message", "Not fund data");
-                  redirect('/user/login');
+                  redirect('/login/login');
              }
         }else if(awz::input()->getMethod() == 'GET'){
             //显示登录见面

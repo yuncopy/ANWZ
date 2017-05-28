@@ -13,7 +13,6 @@ class  baseController  extends awz
 {
     
     
- 
     public function __construct() {
        
         $this->isLogin();  // 检查是否登录
@@ -25,14 +24,17 @@ class  baseController  extends awz
     public function  isLogin(){
         $user_id = awz::session()->get('user_id');
         if(!$user_id){
-           redirect('/user/login');
+           redirect('/login/login');
         }
     }
     
     //获取用户名
     public function getUser(){
         $user_email = self::$_session->get("user_email");
-        $this->assign('user_email',$user_email);
+        if($user_email){
+            $this->assign('user_email',$user_email);
+        }
+        
     }
 
 

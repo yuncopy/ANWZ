@@ -11,7 +11,8 @@ use \core\lib\model as model;
 class roleModel extends model
 {
     private  $table = 'role';
- 
+    private  $table_user_role = 'user_role';
+    
     
     public function  listRole(){
         
@@ -74,6 +75,24 @@ class roleModel extends model
         
         
     }
+    
+    
+    public function  getUserRole($user_id=false){
+         //SELECT * FROM role as r LEFT JOIN user_role as ur ON r.id=ur.role_id WHERE ur.uid=2
+        if($user_id){
+            $datas = $this->select($this->table, [
+                        "[>]{$this->table_user_role}" => ["id" => "role_id"]
+                    ],[
+                        "{$this->table}.name",
+                        "{$this->table}.id",
+                    ],[
+                        "{$this->table_user_role}.uid" => $user_id
+                    ]);
+            return !empty($datas) ? $datas : false;
+        } 
+    }
+    
+   
     
     
     
