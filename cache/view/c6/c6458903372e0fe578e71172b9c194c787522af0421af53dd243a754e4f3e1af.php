@@ -30,10 +30,10 @@ class __TwigTemplate_15bb4fa186a7ec91d59fd4f16a27f1436be320289d3d3b7aec880ceb692
         // line 5
         echo "<div class=\"col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main\">
 
-    <h2 class=\"sub-header\">角色列表</h2>
+    <h2 class=\"sub-header\">用户列表</h2>
     <div class=\"row\">
         <div class=\"col-md-12\">
-            <a  class=\"btn btn-primary pull-right\" href=\"/role/add\">添加角色</a>
+            <a  class=\"btn btn-primary pull-right\" href=\"/user/add\">添加用户</a>
         </div>
     </div>
     <div class=\"table-responsive\">
@@ -43,43 +43,44 @@ class __TwigTemplate_15bb4fa186a7ec91d59fd4f16a27f1436be320289d3d3b7aec880ceb692
                 <tr>
                     <th>序号</th>
                     <th>名称</th>
-                    <th>描述</th>
+                    <th>邮箱</th>
+                    <th>所属角色</th>
                     <th>操作</th>
                 </tr>
             </thead>
             <tbody>
              
                 ";
-        // line 26
+        // line 27
         if ((twig_length_filter($this->env, ($context["list"] ?? null)) > 0)) {
-            // line 27
+            // line 28
             echo "                    ";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(($context["list"] ?? null));
             foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-                // line 28
+                // line 29
                 echo "                    <tr>
                         <td>";
-                // line 29
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["item"], "id", array()));
-                echo "</td>
-                        <td>";
                 // line 30
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["item"], "name", array()));
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["item"], "id", array()));
                 echo "</td>
                         <td>";
                 // line 31
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["item"], "descs", array()));
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["item"], "name", array()));
+                echo "</td>
+                        <td>";
+                // line 32
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["item"], "email", array()));
+                echo "</td>
+                        <td>";
+                // line 33
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["item"], "role_name", array()));
                 echo "</td>
                         <td>
-                            <a class=\"btn btn-info btn-xs\" href=\"/role/edit/id/";
-                // line 33
+                            <a class=\"btn btn-info btn-xs\" href=\"/user/edit/id/";
+                // line 35
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["item"], "id", array()));
                 echo "\" role=\"button\">编辑</a> 
-                            <a class=\"btn btn-success btn-xs\" href=\"/role/edit/id/";
-                // line 34
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["item"], "id", array()));
-                echo "\" role=\"button\">分配权限</a>
                         </td>
                     </tr>
                     ";
@@ -87,16 +88,16 @@ class __TwigTemplate_15bb4fa186a7ec91d59fd4f16a27f1436be320289d3d3b7aec880ceb692
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 38
+            // line 39
             echo "                ";
         } else {
-            // line 39
+            // line 40
             echo "                    <tr>
                         <td colspan=\"4\">Not Found Data</td>
                     </tr>
                 ";
         }
-        // line 43
+        // line 44
         echo "                
             </tbody>
         </table>
@@ -117,7 +118,7 @@ class __TwigTemplate_15bb4fa186a7ec91d59fd4f16a27f1436be320289d3d3b7aec880ceb692
 
     public function getDebugInfo()
     {
-        return array (  100 => 43,  94 => 39,  91 => 38,  81 => 34,  77 => 33,  72 => 31,  68 => 30,  64 => 29,  61 => 28,  56 => 27,  54 => 26,  31 => 5,  28 => 4,  11 => 2,);
+        return array (  101 => 44,  95 => 40,  92 => 39,  82 => 35,  77 => 33,  73 => 32,  69 => 31,  65 => 30,  62 => 29,  57 => 28,  55 => 27,  31 => 5,  28 => 4,  11 => 2,);
     }
 
     public function getSourceContext()
@@ -128,10 +129,10 @@ class __TwigTemplate_15bb4fa186a7ec91d59fd4f16a27f1436be320289d3d3b7aec880ceb692
 {% block content %}
 <div class=\"col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main\">
 
-    <h2 class=\"sub-header\">角色列表</h2>
+    <h2 class=\"sub-header\">用户列表</h2>
     <div class=\"row\">
         <div class=\"col-md-12\">
-            <a  class=\"btn btn-primary pull-right\" href=\"/role/add\">添加角色</a>
+            <a  class=\"btn btn-primary pull-right\" href=\"/user/add\">添加用户</a>
         </div>
     </div>
     <div class=\"table-responsive\">
@@ -141,7 +142,8 @@ class __TwigTemplate_15bb4fa186a7ec91d59fd4f16a27f1436be320289d3d3b7aec880ceb692
                 <tr>
                     <th>序号</th>
                     <th>名称</th>
-                    <th>描述</th>
+                    <th>邮箱</th>
+                    <th>所属角色</th>
                     <th>操作</th>
                 </tr>
             </thead>
@@ -152,10 +154,10 @@ class __TwigTemplate_15bb4fa186a7ec91d59fd4f16a27f1436be320289d3d3b7aec880ceb692
                     <tr>
                         <td>{{ item.id |e }}</td>
                         <td>{{ item.name |e }}</td>
-                        <td>{{ item.descs |e }}</td>
+                        <td>{{ item.email |e }}</td>
+                        <td>{{ item.role_name |e }}</td>
                         <td>
-                            <a class=\"btn btn-info btn-xs\" href=\"/role/edit/id/{{ item.id |e }}\" role=\"button\">编辑</a> 
-                            <a class=\"btn btn-success btn-xs\" href=\"/role/edit/id/{{ item.id |e }}\" role=\"button\">分配权限</a>
+                            <a class=\"btn btn-info btn-xs\" href=\"/user/edit/id/{{ item.id |e }}\" role=\"button\">编辑</a> 
                         </td>
                     </tr>
                     {% endfor %}

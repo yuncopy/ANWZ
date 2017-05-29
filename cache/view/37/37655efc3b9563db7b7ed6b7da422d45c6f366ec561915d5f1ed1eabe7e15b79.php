@@ -76,7 +76,7 @@ class __TwigTemplate_0da9bae2c05d044c25dd59563996dc2507ef7f2f5a1e66aed6f27a73a60
                 // line 33
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["item"], "id", array()));
                 echo "\" role=\"button\">编辑</a> 
-                            <a class=\"btn btn-success btn-xs\" href=\"/role/edit/id/";
+                            <a class=\"btn btn-success btn-xs\" href=\"/role/auth/id/";
                 // line 34
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["item"], "id", array()));
                 echo "\" role=\"button\">分配权限</a>
@@ -155,7 +155,7 @@ class __TwigTemplate_0da9bae2c05d044c25dd59563996dc2507ef7f2f5a1e66aed6f27a73a60
                         <td>{{ item.descs |e }}</td>
                         <td>
                             <a class=\"btn btn-info btn-xs\" href=\"/role/edit/id/{{ item.id |e }}\" role=\"button\">编辑</a> 
-                            <a class=\"btn btn-success btn-xs\" href=\"/role/edit/id/{{ item.id |e }}\" role=\"button\">分配权限</a>
+                            <a class=\"btn btn-success btn-xs\" href=\"/role/auth/id/{{ item.id |e }}\" role=\"button\">分配权限</a>
                         </td>
                     </tr>
                     {% endfor %}

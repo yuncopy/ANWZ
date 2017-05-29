@@ -1,0 +1,75 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+    <h2 class="sub-header">权限添加</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <a  class="btn btn-primary pull-right" href="/access/list">返回列表</a>
+        </div>
+    </div>
+    <div class="row">
+        <form class="form-horizontal" action="/access/add" method="post">
+            <div class="form-group">
+                <label for="inputPid" class="col-sm-2 control-label">权限分类</label>
+                <div class="col-sm-6">
+                    <select name="pid" class="form-control">
+                        <option value="0">一级URL</option>
+                        {% if accesslist|length > 0 %}
+                            {% for access in accesslist %}
+                             <option value="{{ access.id |e }}">{{ access.title |e }}</option>
+                            {% endfor %} 
+                        {% endif %}  
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputTitle" class="col-sm-2 control-label">权限名称</label>
+                <div class="col-sm-6">
+                    <input type="text" required name="title" class="form-control" id="inputTitle" placeholder="权限名称">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputUrl" class="col-sm-2 control-label">权限URL</label>
+                <div class="col-sm-6">
+                    <input type="text"  required  name="url" class="form-control" id="inputUrl" placeholder="权限URL">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword" class="col-sm-2 control-label">是否菜单</label>
+                <div class="col-sm-6"> 
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="menu"  value="2" checked="checked">
+                             请求URL
+                        </label>
+                    </div>
+                     <div class="radio">
+                        <label>
+                            <input type="radio" name="menu"  value="1" >
+                             左侧菜单
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-6">
+                    <div class="checkbox">
+                        <label>
+                            <input name="status" type="checkbox" value="1" checked="checked"> 开启
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-6">
+                    <button type="submit" class="btn btn-primary pull-right">提交</button>
+                </div>
+            </div>
+        </form>
+
+    </div>>
+</div>
+{% endblock %}

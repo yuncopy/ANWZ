@@ -40,6 +40,7 @@ class loginController extends awz
                         //保存用户信息               
                         awz::session()->set("user_email", $list['email']);
                         awz::session()->set("user_id", $list['id']);
+                        awz::session()->set("is_admin", $list['is_admin']);
                         redirect('/index/index');
                         
                     }else{

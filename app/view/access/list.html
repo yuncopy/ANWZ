@@ -4,10 +4,10 @@
 {% block content %}
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-    <h2 class="sub-header">角色列表</h2>
+    <h2 class="sub-header">权限列表</h2>
     <div class="row">
         <div class="col-md-12">
-            <a  class="btn btn-primary pull-right" href="/role/add">添加角色</a>
+            <a  class="btn btn-primary pull-right" href="/access/add">添加权限</a>
         </div>
     </div>
     <div class="table-responsive">
@@ -17,21 +17,22 @@
                 <tr>
                     <th>序号</th>
                     <th>名称</th>
-                    <th>描述</th>
+                    <th>URL</th>
+                    <th>位置</th>
                     <th>操作</th>
                 </tr>
             </thead>
             <tbody>
              
-                {% if list|length > 0 %}
-                    {% for item in list %}
+                {% if accesslist|length > 0 %}
+                    {% for access in accesslist %}
                     <tr>
-                        <td>{{ item.id |e }}</td>
-                        <td>{{ item.name |e }}</td>
-                        <td>{{ item.descs |e }}</td>
+                        <td>{{ access.id |e }}</td>
+                        <td>{{ access.title |e }}</td>
+                        <td>{{ access.url |e }}</td>
+                        <td>{{ access.menu |e }}</td>
                         <td>
-                            <a class="btn btn-info btn-xs" href="/role/edit/id/{{ item.id |e }}" role="button">编辑</a> 
-                            <a class="btn btn-success btn-xs" href="/role/auth/id/{{ item.id |e }}" role="button">分配权限</a>
+                            <a class="btn btn-info btn-xs" href="/access/edit/id/{{ access.id |e }}" role="button">编辑</a> 
                         </td>
                     </tr>
                     {% endfor %}

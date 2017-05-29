@@ -1,0 +1,96 @@
+
+{% extends "layout.html" %}
+{% block content %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+    <h2 class="sub-header">角色授权</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <a  class="btn btn-primary pull-right" href="/role/list">返回列表</a>
+        </div>
+    </div>
+    <div class="row">
+        <form class="form-horizontal" action="/role/auth" method="post">
+            <input name="id" type="hidden" value="{{ role.id }}">
+            <div class="form-group">
+                <label for="inputName" class="col-sm-2 control-label">角色名称</label>
+                <div class="col-sm-6">
+                    <input type="text" disabled  value="{{ role.name }}" class="form-control" id="inputName" placeholder="角色名称">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputDescs" class="col-sm-2 control-label">角色描述</label>
+                <div class="col-sm-6">
+                    <input type="text" disabled value="{{ role.descs }}" class="form-control" id="inputDescs" placeholder="角色描述">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputDescs" class="col-sm-2 control-label">权限列表</label>
+                <div class="col-sm-6">
+                    {% if accesslist|length > 0 %}
+                        {% for access in accesslist %}
+                            <div class="checkbox">
+                                <label class="labels">
+                                    <input class="access" {{ access.checked }} name="access_id[]" type="checkbox" data="{{ access.pid |e }}" value="{{ access.id |e }}">{{ access.title |e }}
+                                </label>
+                            </div>
+                        {% endfor %}
+                    {% else %} 
+                       <p class="text-primary">Not Found Data</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-6">
+                    <button type="submit" class="btn btn-primary pull-right">提交</button>
+                </div>
+            </div>
+        </form>
+
+    </div>>
+</div>
+{% endblock %}
+
+{% block script %}
+
+<script>
+    $(function($) {
+        $(document).on('click', '.checkbox .access', function (event) {
+            var target = $(event.target);
+            if(target.attr('class') == 'labels'){
+                target = target.find('.access');
+            }
+            var access_pid = target.attr('data');
+            var access_id = target.val();
+            $(".access").each(function(i,v){
+               var ps = $(this).val();
+               var pd = $(this).attr('data');
+                if(ps == access_pid  ){
+                    var check = $(this).is(':checked');
+                    if(check){
+                        $(this).prop("checked", true);
+                    }else{
+                        $(this).prop("checked",false);
+                    }
+                }
+                if(access_id == pd){
+                    $(this).trigger("click");
+                    var check = $(this).is(':checked');
+                    if(check){
+                        $(this).prop("checked", true);
+                    }else{
+                        $(this).prop("checked",false);
+                    }
+                    
+                }
+               //this.src = "test" + i + ".jpg";
+            });
+            
+           // console.log(target.val());
+        });
+        
+        
+    });
+</script>
+
+{% endblock %}

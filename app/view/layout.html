@@ -55,22 +55,33 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
+            {% if menulist|length > 0 %}
+                <ul class="nav nav-sidebar">
+                {% for menu in menulist %}
+                    <li {% if menu.pid == 0 %} class="active" {% endif %} ><a href="{{ menu.url |e }}">{{ menu.title |e }} {% if menu.pid == 0 %}<span class="sr-only">(current)</span>{% endif %}</a></li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <ul class="nav nav-sidebar">
+                    <li class="active"><a href="#">系统出错了<span class="sr-only">(current)</span></a></li>
+                </ul>
+            {% endif %}
+          <!--ul class="nav nav-sidebar">
             <li class="active"><a href="#">文章管理 <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">文章列表</a></li>
-            <li><a href="#">添加文章</a></li>
+            <li><a href="/article/list">文章列表</a></li>
+            <li><a href="/article/add">添加文章</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li class="active"><a href="#">系统管理 <span class="sr-only">(current)</span></a></li>
             <li><a href="/user/list">用户管理</a></li>
             <li><a href="/role/list">角色管理</a></li>
-            <li><a href="">权限管理</a></li>
+            <li><a href="/access/list">权限管理</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li class="active"><a href="#">分类管理<span class="sr-only">(current)</span></a></li>
-            <li><a href="">分类列表</a></li>
-            <li><a href="">添加分类</a></li>
-          </ul>
+            <li><a href="/cate/list">分类列表</a></li>
+            <li><a href="/cate/add">添加分类</a></li>
+          </ul-->
         </div>
           <div class="col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 " >
                   <div style="display: none" class="alert alert-info closes" role="alert" data-dismiss="modal" aria-label="Close" >{{ getfash('message') }} </div>
@@ -93,7 +104,7 @@
     <script src="/public/js/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/public/js/ie10-viewport-bug-workaround.js"></script>
-     <script>
+    <script>
         $(function($) {
             var _closes = $(".closes");
             var html = $.trim(_closes.html());
@@ -111,6 +122,10 @@
              },3000);
           });
        
-    </script>  
+    </script>
+    
+    {% block script %}
+    
+    {% endblock %}
   </body>
 </html>

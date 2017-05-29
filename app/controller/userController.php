@@ -116,7 +116,6 @@ class userController extends baseController
         $input = new Input();
         $Session = awz::session();
         if($input->getMethod() == 'POST'){
-            $name = $input->getUsername('name',false);
             $id = $input->get('id',false);
             $name = $input->getUsername('name',false);
             $email = $input->get('email',false);

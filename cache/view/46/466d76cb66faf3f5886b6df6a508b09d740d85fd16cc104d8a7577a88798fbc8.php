@@ -11,6 +11,7 @@ class __TwigTemplate_bc330110e77af25d8a936787ee8fdd85f67852f9a847300acdb13395193
 
         $this->blocks = array(
             'content' => array($this, 'block_content'),
+            'script' => array($this, 'block_script'),
         );
     }
 
@@ -77,34 +78,74 @@ class __TwigTemplate_bc330110e77af25d8a936787ee8fdd85f67852f9a847300acdb13395193
     <div class=\"container-fluid\">
       <div class=\"row\">
         <div class=\"col-sm-3 col-md-2 sidebar\">
-          <ul class=\"nav nav-sidebar\">
+            ";
+        // line 58
+        if ((twig_length_filter($this->env, ($context["menulist"] ?? null)) > 0)) {
+            // line 59
+            echo "                <ul class=\"nav nav-sidebar\">
+                ";
+            // line 60
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(($context["menulist"] ?? null));
+            foreach ($context['_seq'] as $context["_key"] => $context["menu"]) {
+                // line 61
+                echo "                    <li ";
+                if ((twig_get_attribute($this->env, $this->getSourceContext(), $context["menu"], "pid", array()) == 0)) {
+                    echo " class=\"active\" ";
+                }
+                echo " ><a href=\"";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["menu"], "url", array()));
+                echo "\">";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["menu"], "title", array()));
+                echo " ";
+                if ((twig_get_attribute($this->env, $this->getSourceContext(), $context["menu"], "pid", array()) == 0)) {
+                    echo "<span class=\"sr-only\">(current)</span>";
+                }
+                echo "</a></li>
+                ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['menu'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 63
+            echo "                </ul>
+            ";
+        } else {
+            // line 65
+            echo "                <ul class=\"nav nav-sidebar\">
+                    <li class=\"active\"><a href=\"#\">系统出错了<span class=\"sr-only\">(current)</span></a></li>
+                </ul>
+            ";
+        }
+        // line 69
+        echo "          <!--ul class=\"nav nav-sidebar\">
             <li class=\"active\"><a href=\"#\">文章管理 <span class=\"sr-only\">(current)</span></a></li>
-            <li><a href=\"#\">文章列表</a></li>
-            <li><a href=\"#\">添加文章</a></li>
+            <li><a href=\"/article/list\">文章列表</a></li>
+            <li><a href=\"/article/add\">添加文章</a></li>
           </ul>
           <ul class=\"nav nav-sidebar\">
             <li class=\"active\"><a href=\"#\">系统管理 <span class=\"sr-only\">(current)</span></a></li>
             <li><a href=\"/user/list\">用户管理</a></li>
             <li><a href=\"/role/list\">角色管理</a></li>
-            <li><a href=\"\">权限管理</a></li>
+            <li><a href=\"/access/list\">权限管理</a></li>
           </ul>
           <ul class=\"nav nav-sidebar\">
             <li class=\"active\"><a href=\"#\">分类管理<span class=\"sr-only\">(current)</span></a></li>
-            <li><a href=\"\">分类列表</a></li>
-            <li><a href=\"\">添加分类</a></li>
-          </ul>
+            <li><a href=\"/cate/list\">分类列表</a></li>
+            <li><a href=\"/cate/add\">添加分类</a></li>
+          </ul-->
         </div>
           <div class=\"col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 \" >
                   <div style=\"display: none\" class=\"alert alert-info closes\" role=\"alert\" data-dismiss=\"modal\" aria-label=\"Close\" >";
-        // line 76
+        // line 87
         echo twig_escape_filter($this->env, twig_getfash($this->env, $context, "message"), "html", null, true);
         echo " </div>
           </div>
           <div id=\"content\">
               ";
-        // line 79
+        // line 90
         $this->displayBlock('content', $context, $blocks);
-        // line 82
+        // line 93
         echo "          </div>
       </div>
     </div>
@@ -119,7 +160,7 @@ class __TwigTemplate_bc330110e77af25d8a936787ee8fdd85f67852f9a847300acdb13395193
     <script src=\"/public/js/holder.min.js\"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src=\"/public/js/ie10-viewport-bug-workaround.js\"></script>
-     <script>
+    <script>
         \$(function(\$) {
             var _closes = \$(\".closes\");
             var html = \$.trim(_closes.html());
@@ -137,18 +178,31 @@ class __TwigTemplate_bc330110e77af25d8a936787ee8fdd85f67852f9a847300acdb13395193
              },3000);
           });
        
-    </script>  
-  </body>
+    </script>
+    
+    ";
+        // line 127
+        $this->displayBlock('script', $context, $blocks);
+        // line 130
+        echo "  </body>
 </html>
 ";
     }
 
-    // line 79
+    // line 90
     public function block_content($context, array $blocks = array())
     {
-        // line 80
+        // line 91
         echo "              
               ";
+    }
+
+    // line 127
+    public function block_script($context, array $blocks = array())
+    {
+        // line 128
+        echo "    
+    ";
     }
 
     public function getTemplateName()
@@ -163,7 +217,7 @@ class __TwigTemplate_bc330110e77af25d8a936787ee8fdd85f67852f9a847300acdb13395193
 
     public function getDebugInfo()
     {
-        return array (  150 => 80,  147 => 79,  108 => 82,  106 => 79,  100 => 76,  69 => 48,  20 => 1,);
+        return array (  204 => 128,  201 => 127,  196 => 91,  193 => 90,  187 => 130,  185 => 127,  149 => 93,  147 => 90,  141 => 87,  121 => 69,  115 => 65,  111 => 63,  92 => 61,  88 => 60,  85 => 59,  83 => 58,  70 => 48,  21 => 1,);
     }
 
     public function getSourceContext()
@@ -225,22 +279,33 @@ class __TwigTemplate_bc330110e77af25d8a936787ee8fdd85f67852f9a847300acdb13395193
     <div class=\"container-fluid\">
       <div class=\"row\">
         <div class=\"col-sm-3 col-md-2 sidebar\">
-          <ul class=\"nav nav-sidebar\">
+            {% if menulist|length > 0 %}
+                <ul class=\"nav nav-sidebar\">
+                {% for menu in menulist %}
+                    <li {% if menu.pid == 0 %} class=\"active\" {% endif %} ><a href=\"{{ menu.url |e }}\">{{ menu.title |e }} {% if menu.pid == 0 %}<span class=\"sr-only\">(current)</span>{% endif %}</a></li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <ul class=\"nav nav-sidebar\">
+                    <li class=\"active\"><a href=\"#\">系统出错了<span class=\"sr-only\">(current)</span></a></li>
+                </ul>
+            {% endif %}
+          <!--ul class=\"nav nav-sidebar\">
             <li class=\"active\"><a href=\"#\">文章管理 <span class=\"sr-only\">(current)</span></a></li>
-            <li><a href=\"#\">文章列表</a></li>
-            <li><a href=\"#\">添加文章</a></li>
+            <li><a href=\"/article/list\">文章列表</a></li>
+            <li><a href=\"/article/add\">添加文章</a></li>
           </ul>
           <ul class=\"nav nav-sidebar\">
             <li class=\"active\"><a href=\"#\">系统管理 <span class=\"sr-only\">(current)</span></a></li>
             <li><a href=\"/user/list\">用户管理</a></li>
             <li><a href=\"/role/list\">角色管理</a></li>
-            <li><a href=\"\">权限管理</a></li>
+            <li><a href=\"/access/list\">权限管理</a></li>
           </ul>
           <ul class=\"nav nav-sidebar\">
             <li class=\"active\"><a href=\"#\">分类管理<span class=\"sr-only\">(current)</span></a></li>
-            <li><a href=\"\">分类列表</a></li>
-            <li><a href=\"\">添加分类</a></li>
-          </ul>
+            <li><a href=\"/cate/list\">分类列表</a></li>
+            <li><a href=\"/cate/add\">添加分类</a></li>
+          </ul-->
         </div>
           <div class=\"col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 \" >
                   <div style=\"display: none\" class=\"alert alert-info closes\" role=\"alert\" data-dismiss=\"modal\" aria-label=\"Close\" >{{ getfash('message') }} </div>
@@ -263,7 +328,7 @@ class __TwigTemplate_bc330110e77af25d8a936787ee8fdd85f67852f9a847300acdb13395193
     <script src=\"/public/js/holder.min.js\"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src=\"/public/js/ie10-viewport-bug-workaround.js\"></script>
-     <script>
+    <script>
         \$(function(\$) {
             var _closes = \$(\".closes\");
             var html = \$.trim(_closes.html());
@@ -281,7 +346,11 @@ class __TwigTemplate_bc330110e77af25d8a936787ee8fdd85f67852f9a847300acdb13395193
              },3000);
           });
        
-    </script>  
+    </script>
+    
+    {% block script %}
+    
+    {% endblock %}
   </body>
 </html>
 ", "layout.html", "F:\\Projects\\ANWZ\\app\\view\\layout.html");

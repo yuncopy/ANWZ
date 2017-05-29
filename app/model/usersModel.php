@@ -35,7 +35,8 @@ class usersModel extends model
                 "email",
                 "password",
                 "id",
-                "name"
+                "name",
+                "is_admin"
             ], [
                 "email[=]" => $user_email
             ]);
