@@ -1,6 +1,10 @@
 # ANWZ
 ANWZ  is a simple PHP framework
 
+## 使用说明
+--- 导入数据库文件，数据名：awzphp  
+--- 数据库配置文件目录 core\config\database.php
+--- 全部用户密码是 111111  ， 登录用户名是邮箱
 
 Nginx配置
 ```
